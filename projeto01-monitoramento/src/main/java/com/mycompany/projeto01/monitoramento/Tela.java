@@ -5,12 +5,35 @@
  */
 package com.mycompany.projeto01.monitoramento;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author victor
  */
 public class Tela extends javax.swing.JFrame {
 
+    Hardware hw = new Hardware();
+    void fazerLeituras() {
+        Integer usoCpu = ThreadLocalRandom.current().nextInt(0, 101);
+        Integer memoriaAleatoria = ThreadLocalRandom.current().nextInt(0, (hw.memoria + 1));
+        Integer discoAleatorio = ThreadLocalRandom.current().nextInt(0, (hw.disco + 1));
+        
+        Integer usoMemoria = (memoriaAleatoria * 100) / hw.memoria;
+        Integer usoDisco = (discoAleatorio * 100) / hw.disco;
+        
+        pbCpu.setStringPainted(true);
+        pbCpu.setValue(usoCpu);
+        pbCpu.setString(usoCpu + "%");
+        
+        pbMemoria.setStringPainted(true);
+        pbMemoria.setValue(usoMemoria);
+        pbMemoria.setString(usoMemoria + "%");
+        
+        pbDisco.setStringPainted(true);
+        pbDisco.setValue(usoDisco);
+        pbDisco.setString(usoDisco + "%");
+    }
     /**
      * Creates new form Tela
      */
@@ -53,7 +76,7 @@ public class Tela extends javax.swing.JFrame {
         lbTotalMemória1 = new javax.swing.JLabel();
         lbMaximoDisco = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        pbMemoria1 = new javax.swing.JProgressBar();
+        pbDisco = new javax.swing.JProgressBar();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         btFazerLeituras = new javax.swing.JButton();
@@ -63,8 +86,10 @@ public class Tela extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Monitoramento de recursos de Hardware");
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Uso de CPU");
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Uso de memória");
 
         jLabel5.setText("Quantidade total:");
@@ -87,6 +112,7 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel17.setText("Máximo:");
 
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel18.setText("Uso de disco");
 
         jLabel19.setText("Quantidade total:");
@@ -157,7 +183,7 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbTotalMemória1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pbMemoria1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pbDisco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btFazerLeituras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(39, 39, 39))
         );
@@ -209,7 +235,7 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addComponent(lbTotalMemória1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pbMemoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -232,7 +258,7 @@ public class Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btFazerLeiturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFazerLeiturasActionPerformed
-        // TODO add your handling code here:
+        fazerLeituras();
     }//GEN-LAST:event_btFazerLeiturasActionPerformed
 
     /**
@@ -299,7 +325,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel lbTotalMemória;
     private javax.swing.JLabel lbTotalMemória1;
     private javax.swing.JProgressBar pbCpu;
+    private javax.swing.JProgressBar pbDisco;
     private javax.swing.JProgressBar pbMemoria;
-    private javax.swing.JProgressBar pbMemoria1;
     // End of variables declaration//GEN-END:variables
 }
