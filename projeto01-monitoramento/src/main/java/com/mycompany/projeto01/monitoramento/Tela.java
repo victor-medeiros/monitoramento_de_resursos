@@ -49,6 +49,27 @@ public class Tela extends javax.swing.JFrame {
         }
     }
     
+    void verificarMaximo() {
+        Integer cpuValue = pbCpu.getValue();
+        Integer memoriaValue = pbMemoria.getValue();
+        Integer discoValue = pbDisco.getValue();
+        
+        if (cpuValue > hw.maximoCpu) {
+            hw.maximoCpu = cpuValue;
+            lbMaximoCpu.setText(cpuValue + "%");
+        }
+        
+        if (memoriaValue > hw.maximoMemoria) {
+            hw.maximoMemoria = memoriaValue;
+            lbMaximoMemoria.setText(memoriaValue + "%");
+        }
+        
+        if (discoValue > hw.maximoDisco) {
+            hw.maximoDisco = discoValue;
+            lbMaximoDisco.setText(discoValue + "%");
+        }
+    }
+    
     void fazerLeituras() {
         Integer usoCpu = ThreadLocalRandom.current().nextInt(0, 101);
         Integer memoriaAleatoria = ThreadLocalRandom.current().nextInt(0, (hw.memoria + 1));
@@ -301,6 +322,7 @@ public class Tela extends javax.swing.JFrame {
         fazerLeituras();
         calcularMedia();
         verificarMinimo();
+        verificarMaximo();
     }//GEN-LAST:event_btFazerLeiturasActionPerformed
 
     /**

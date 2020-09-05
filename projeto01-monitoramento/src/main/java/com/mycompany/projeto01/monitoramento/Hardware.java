@@ -14,4 +14,8 @@ public class Hardware {
     Integer minimoMemoria = 100;
     Integer minimoDisco = 100;
     
+    Integer maximoCpu = 0;
+    Integer maximoMemoria = 0;
+    Integer maximoDisco = 0;
+    
 }
