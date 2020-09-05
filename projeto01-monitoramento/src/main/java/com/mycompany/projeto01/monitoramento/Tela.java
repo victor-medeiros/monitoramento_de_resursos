@@ -28,6 +28,27 @@ public class Tela extends javax.swing.JFrame {
         lbMediaDisco.setText(lbMediaDisco.getText() + "%");
     }
     
+    void verificarMinimo() {
+        Integer cpuValue = pbCpu.getValue();
+        Integer memoriaValue = pbMemoria.getValue();
+        Integer discoValue = pbDisco.getValue();
+        
+        if (cpuValue < hw.minimoCpu) {
+            hw.minimoCpu = cpuValue;
+            lbMinimoCpu.setText(cpuValue + "%");
+        }
+        
+        if (memoriaValue < hw.minimoMemoria) {
+            hw.minimoMemoria = memoriaValue;
+            lbMinimoMemoria.setText(memoriaValue + "%");
+        }
+        
+        if (discoValue < hw.minimoDisco) {
+            hw.minimoDisco = discoValue;
+            lbMinimoDisco.setText(discoValue + "%");
+        }
+    }
+    
     void fazerLeituras() {
         Integer usoCpu = ThreadLocalRandom.current().nextInt(0, 101);
         Integer memoriaAleatoria = ThreadLocalRandom.current().nextInt(0, (hw.memoria + 1));
@@ -279,6 +300,7 @@ public class Tela extends javax.swing.JFrame {
         hw.contador++;
         fazerLeituras();
         calcularMedia();
+        verificarMinimo();
     }//GEN-LAST:event_btFazerLeiturasActionPerformed
 
     /**

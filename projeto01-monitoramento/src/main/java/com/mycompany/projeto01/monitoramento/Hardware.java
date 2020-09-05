@@ -10,4 +10,8 @@ public class Hardware {
     Integer somaValoresMemoria = 0;
     Integer somaValoresDisco = 0;
     
+    Integer minimoCpu = 100;
+    Integer minimoMemoria = 100;
+    Integer minimoDisco = 100;
+    
 }
