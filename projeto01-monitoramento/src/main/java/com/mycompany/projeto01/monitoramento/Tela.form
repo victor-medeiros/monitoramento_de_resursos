@@ -53,15 +53,15 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbMediaProcessador" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="lbMediaCpu" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbMinimoProcessador" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="lbMinimoCpu" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbMaximoProcessador" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="lbMaximoCpu" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
@@ -105,17 +105,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbMediaProcessador" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="lbMediaCpu" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbMinimoProcessador" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="lbMinimoCpu" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbMaximoProcessador" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="lbMaximoCpu" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -236,7 +236,7 @@
         <Property name="text" type="java.lang.String" value="M&#xe1;ximo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbMediaProcessador">
+    <Component class="javax.swing.JLabel" name="lbMediaCpu">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
@@ -248,9 +248,9 @@
         <Property name="text" type="java.lang.String" value="M&#xe9;dia:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbMinimoProcessador">
+    <Component class="javax.swing.JLabel" name="lbMinimoCpu">
     </Component>
-    <Component class="javax.swing.JLabel" name="lbMaximoProcessador">
+    <Component class="javax.swing.JLabel" name="lbMaximoCpu">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
