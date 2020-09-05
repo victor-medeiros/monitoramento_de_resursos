@@ -31,7 +31,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbTotalMemória" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="lbTotalMemoria" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" max="32767" attributes="0"/>
@@ -81,7 +81,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbTotalMemória1" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="lbTotalDisco" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <Component id="pbDisco" alignment="1" max="32767" attributes="0"/>
                   <Component id="btFazerLeituras" max="32767" attributes="0"/>
@@ -119,10 +119,12 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbTotalMemória" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lbTotalMemoria" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pbMemoria" min="-2" max="-2" attributes="0"/>
@@ -146,10 +148,12 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbTotalMemória1" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lbTotalDisco" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pbDisco" min="-2" max="-2" attributes="0"/>
@@ -213,7 +217,7 @@
         <Property name="text" type="java.lang.String" value="Quantidade total:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbTotalMem&#xf3;ria">
+    <Component class="javax.swing.JLabel" name="lbTotalMemoria">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -271,7 +275,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbMediaDisco">
     </Component>
-    <Component class="javax.swing.JLabel" name="lbTotalMem&#xf3;ria1">
+    <Component class="javax.swing.JLabel" name="lbTotalDisco">
     </Component>
     <Component class="javax.swing.JLabel" name="lbMaximoDisco">
     </Component>

@@ -14,6 +14,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Tela extends javax.swing.JFrame {
 
     Hardware hw = new Hardware();
+    
+    
+    
     void calcularMedia() {
         Double mediaCpu = Double.valueOf(hw.somaValoresCpu / hw.contador);
         lbMediaCpu.setText(String.format("%.0f", mediaCpu));
@@ -116,7 +119,7 @@ public class Tela extends javax.swing.JFrame {
         pbMemoria = new javax.swing.JProgressBar();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        lbTotalMemória = new javax.swing.JLabel();
+        lbTotalMemoria = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbMinimoMemoria = new javax.swing.JLabel();
@@ -133,7 +136,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         lbMinimoDisco = new javax.swing.JLabel();
         lbMediaDisco = new javax.swing.JLabel();
-        lbTotalMemória1 = new javax.swing.JLabel();
+        lbTotalDisco = new javax.swing.JLabel();
         lbMaximoDisco = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         pbDisco = new javax.swing.JProgressBar();
@@ -196,7 +199,7 @@ public class Tela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbTotalMemória, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbTotalMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pbCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -242,7 +245,7 @@ public class Tela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbTotalMemória1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbTotalDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pbDisco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btFazerLeituras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(39, 39, 39))
@@ -270,10 +273,11 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel14)
                         .addComponent(lbMaximoCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
-                    .addComponent(lbTotalMemória, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTotalMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pbMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,10 +294,11 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addComponent(lbMaximoMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19)
-                    .addComponent(lbTotalMemória1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTotalDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel18)
+                        .addComponent(jLabel19)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,6 +323,8 @@ public class Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btFazerLeiturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFazerLeiturasActionPerformed
+        lbTotalMemoria.setText(String.format("%dGB", hw.memoria));
+        lbTotalDisco.setText(String.format("%dGB", hw.disco));
         hw.contador++;
         fazerLeituras();
         calcularMedia();
@@ -386,8 +393,8 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel lbMinimoCpu;
     private javax.swing.JLabel lbMinimoDisco;
     private javax.swing.JLabel lbMinimoMemoria;
-    private javax.swing.JLabel lbTotalMemória;
-    private javax.swing.JLabel lbTotalMemória1;
+    private javax.swing.JLabel lbTotalDisco;
+    private javax.swing.JLabel lbTotalMemoria;
     private javax.swing.JProgressBar pbCpu;
     private javax.swing.JProgressBar pbDisco;
     private javax.swing.JProgressBar pbMemoria;
